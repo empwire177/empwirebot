@@ -46,6 +46,10 @@ Main hardware includes:
 - [Software Status](docs/software_status.md)
 - [Testing Checklist](docs/testing_checklist.md)
 - [Changelog](CHANGELOG.md)
+- [Changelog](CHANGELOG.md)
+- [Contributing Guide](CONTRIBUTING.md)
+- [License](LICENSE)
+
 
 ---
 

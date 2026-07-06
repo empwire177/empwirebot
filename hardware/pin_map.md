@@ -53,7 +53,7 @@ Used for distance sensors, MPU6050, and AHT10.
 | Front  | GPIO12          |
 | Left   | GPIO13          |
 | Right  | GPIO14          |
-| Back   | To be confirmed |
+| Back   | GPIO15          |
 
 ## Wheel Encoders
 
@@ -127,11 +127,11 @@ Connected to ESP32 I2C bus.
 
 Status: hardware added, wiring/testing in progress.
 
-| Wire / Signal | Connection      |
-| ------------- | --------------- |
-| VCC           | To be confirmed |
-| GND           | To be confirmed |
-| TX            | To be confirmed |
+|LiDAR LD06  Wire | Connection      |
+| -------------   | --------------- |
+| VCC             | 5v from L298n driver |
+| GND             | GND             |
+| TX              | ESP32 GPIO34    |
 | RX            | To be confirmed |
 
 ## Raspberry Pi Camera 8MP

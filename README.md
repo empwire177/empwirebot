@@ -43,6 +43,7 @@ Main hardware includes:
 - [Camera Setup Notes](docs/camera_setup.md)
 - [ESP32 Firmware Notes](firmware/esp32/README.md)
 - [ROS 2 Workspace Notes](ros2_ws/src/README.md)
+- [Software Status](docs/software_status.md)
 ---
 
 ## Project Goals

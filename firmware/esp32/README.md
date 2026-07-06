@@ -1,4 +1,9 @@
 # EmpwireBot ESP32 Firmware
+## Firmware Index
+
+See the firmware index here:
+
+[Firmware Index](FIRMWARE_INDEX.md)
 
 This folder contains ESP32 firmware used for EmpwireBot motor control, sensor reading, encoder counting, and serial communication with Raspberry Pi 5.
 

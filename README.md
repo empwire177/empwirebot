@@ -49,7 +49,7 @@ Main hardware includes:
 - [Changelog](CHANGELOG.md)
 - [Contributing Guide](CONTRIBUTING.md)
 - [License](LICENSE)
-
+- [Serial Protocol](docs/serial_protocol.md)
 
 ---
 

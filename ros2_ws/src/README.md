@@ -47,6 +47,40 @@ The ESP32 handles:
 The Raspberry Pi receives ESP32 data and can publish it into ROS 2 topics.
 
 ## Current / Planned ROS 2 Packages
+## Added Packages
+
+### empwirebot_sensors
+
+Status: **Starter package added**
+
+Location:
+
+```text
+ros2_ws/src/empwirebot_sensors
+
+
+Current node:
+sensor_serial_node
+
+
+Purpose:
+This package reads ESP32 serial sensor data and publishes basic ROS 2 sensor topics.
+
+Current topics:
+/distance/front
+/distance/left
+/distance/right
+/distance/back
+/aht10/temperature
+/aht10/humidity
+/encoder/left
+/encoder/right
+/esp32/uptime_ms
+
+Run command:
+
+ros2 run empwirebot_sensors sensor_serial_node
+
 
 Future ROS 2 packages may include:
 

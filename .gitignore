@@ -216,3 +216,29 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+
+# EmpwireBot / macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.env
+venv/
+
+# ROS 2 build folders
+build/
+install/
+log/
+
+# Arduino temporary files
+*.bin
+*.elf
+*.map
+
+# Large media files
+*.mp4
+*.mov
+*.avi

@@ -31,19 +31,18 @@ Main hardware includes:
 * Raspberry Pi Camera 8MP
 
 ---
-
 ## Documentation
 
-* [Current Hardware List](hardware/current_hardware.md)
-* [Pin Map](hardware/pin_map.md)
-* [Version History](docs/version_history.md)
-* [Development Log](docs/development_log.md)
-* [Roadmap](docs/roadmap.md)
-* [LiDAR Setup Notes](docs/lidar_setup.md)
-* [Camera Setup Notes](docs/camera_setup.md)
-* [ESP32 Firmware Notes](firmware/esp32/README.md)
-* [ROS 2 Workspace Notes](ros2_ws/src/README.md)
-
+- [Current Hardware List](hardware/current_hardware.md)
+- [Pin Map](hardware/pin_map.md)
+- [System Architecture](docs/system_architecture.md)
+- [Version History](docs/version_history.md)
+- [Development Log](docs/development_log.md)
+- [Roadmap](docs/roadmap.md)
+- [LiDAR Setup Notes](docs/lidar_setup.md)
+- [Camera Setup Notes](docs/camera_setup.md)
+- [ESP32 Firmware Notes](firmware/esp32/README.md)
+- [ROS 2 Workspace Notes](ros2_ws/src/README.md)
 ---
 
 ## Project Goals

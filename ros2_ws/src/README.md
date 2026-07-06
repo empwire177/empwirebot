@@ -1,4 +1,9 @@
 # EmpwireBot ROS 2 Workspace
+## Package Index
+
+See the ROS 2 package index here:
+
+[ROS 2 Package Index](ROS2_PACKAGE_INDEX.md)
 
 This folder is for EmpwireBot ROS 2 packages.
 

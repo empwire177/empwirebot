@@ -44,6 +44,8 @@ Main hardware includes:
 - [ESP32 Firmware Notes](firmware/esp32/README.md)
 - [ROS 2 Workspace Notes](ros2_ws/src/README.md)
 - [Software Status](docs/software_status.md)
+- [Testing Checklist](docs/testing_checklist.md)
+
 ---
 
 ## Project Goals

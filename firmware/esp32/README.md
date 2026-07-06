@@ -53,17 +53,25 @@ The ESP32 firmware is currently focused on:
 * Serial communication with Raspberry Pi 5
 * Preparing for ROS 2 sensor integration
 
-## Planned Firmware Files
+
+## Firmware Files
+
+Current firmware files:
+
+- `sensor_serial_v2_1/sensor_serial_v2_1.ino`
+  - Reads four distance sensors
+  - Reads AHT10 temperature and humidity
+  - Reads MPU6050 IMU
+  - Reads left and right wheel encoders
+  - Outputs serial `SENSOR` data for Raspberry Pi / ROS 2
 
 Future firmware files may include:
 
-* `system_health_console.ino`
-* `motor_serial_control.ino`
-* `sensor_serial_output.ino`
-* `encoder_test.ino`
-* `vl53_test.ino`
-* `mpu6050_test.ino`
-* `aht10_test.ino`
+- `motor_serial_control.ino`
+- `encoder_test.ino`
+- `vl53_test.ino`
+- `mpu6050_test.ino`
+- `aht10_test.ino`
 
 ## Notes
 

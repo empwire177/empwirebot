@@ -143,18 +143,39 @@ Purpose:
 
 ### empwirebot_sensors
 
-Status: **In Progress / Planned**
+Status: **Added / Starter Package Created**
 
-Purpose:
+Location:
 
-* Read ESP32 serial sensor data
-* Publish distance sensor data
-* Publish IMU data
-* Publish AHT10 data
-* Publish encoder data
-* Prepare odometry data
-
+```text
+ros2_ws/src/empwirebot_sensors
 ---
+Purpose:
+Read ESP32 SENSOR serial data
+Parse distance sensor values
+Parse AHT10 temperature and humidity
+Parse encoder counts
+Publish basic ROS 2 topics
+Current node:
+sensor_serial_node
+
+Current published topics:
+/distance/front
+/distance/left
+/distance/right
+/distance/back
+/aht10/temperature
+/aht10/humidity
+/encoder/left
+/encoder/right
+/esp32/uptime_ms 
+
+Planned future improvements:
+Add /imu/data
+Add /odom
+Improve serial error handling
+Add launch file
+
 
 ### empwirebot_lidar
 

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>empwirebot_sensors</name>
+  <version>0.5.0</version>
+  <description>EmpwireBot ROS 2 sensor package for ESP32 serial sensor data.</description>
+
+  <maintainer email="empwire177@gmail.com">S M Ashraful Momen</maintainer>
+  <license>MIT</license>
+
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+
+  <exec_depend>python3-serial</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

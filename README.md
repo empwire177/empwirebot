@@ -1,5 +1,38 @@
 # EmpwireBot
 
+![Project Status](https://img.shields.io/badge/status-v0.5--dev-orange)
+![Platform](https://img.shields.io/badge/platform-Raspberry%20Pi%205%20%2B%20ESP32-blue)
+![ROS 2](https://img.shields.io/badge/ROS%202-Jazzy-purple)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+## Project Status Summary
+
+**Current Version:** v0.5-dev - LiDAR and Camera Upgrade
+**Main Controller:** Raspberry Pi 5
+**Low-Level Controller:** ESP32 DevKit V1
+**ROS 2 Version:** ROS 2 Jazzy
+**Current Focus:** LiDAR, camera, ROS 2 sensor integration, odometry, and future SLAM preparation
+
+### Current Status
+
+| Area                     | Status                           |
+| ------------------------ | -------------------------------- |
+| GitHub repository        | Working                          |
+| Documentation            | In progress                      |
+| ESP32 firmware           | Working / improving              |
+| ROS 2 sensor package     | Starter package added            |
+| Motor control            | Working                          |
+| Distance sensors         | Working                          |
+| MPU6050 IMU              | Working                          |
+| AHT10 sensor             | Working                          |
+| Wheel encoders           | Working                          |
+| Basic `/odom` publishing | Added                            |
+| LD06/LD LiDAR            | Hardware added / testing pending |
+| Raspberry Pi Camera 8MP  | Hardware added / testing pending |
+| SLAM and navigation      | Planned                          |
+
+
+
 EmpwireBot is my personal robotics project using Raspberry Pi 5, ESP32, ROS 2, sensors, motor control, LiDAR, camera, and autonomous navigation.
 
 ## Current Version

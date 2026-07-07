@@ -169,9 +169,11 @@ Current published topics:
 /encoder/left
 /encoder/right
 /esp32/uptime_ms 
+/imu/data
+
 
 Planned future improvements:
-Add /imu/data
+- Improve IMU filtering and calibration
 Add /odom
 Improve serial error handling
 Add launch file

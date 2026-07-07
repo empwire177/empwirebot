@@ -28,8 +28,21 @@ Published Topics:
 /encoder/left
 /encoder/right
 /esp32/uptime_ms
+/imu/data
 
 
+## IMU Data
+
+The node publishes MPU6050 data to:
+
+```text
+/imu/data
+
+The ESP32 sends acceleration in g and gyro values in degrees per second.
+The ROS 2 node converts:
+
+acceleration g -> m/s²
+gyro deg/s -> rad/s
 
 Run Command:
 ## Launch Command

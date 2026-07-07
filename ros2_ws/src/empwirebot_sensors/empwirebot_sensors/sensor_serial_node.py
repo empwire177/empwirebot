@@ -17,9 +17,9 @@ Publishes:
 - /encoder/left
 - /encoder/right
 - /esp32/uptime_ms
+- /imu/data
 
 Future:
-- /imu/data
 - /odom
 """
 
@@ -31,6 +31,7 @@ from rclpy.node import Node
 
 from std_msgs.msg import Float32
 from std_msgs.msg import Int64
+from sensor_msgs.msg import Imu
 
 try:
     import serial
@@ -45,10 +46,12 @@ class SensorSerialNode(Node):
         self.declare_parameter("port", "/dev/ttyUSB0")
         self.declare_parameter("baudrate", 115200)
         self.declare_parameter("timer_period", 0.05)
+        self.declare_parameter("imu_frame_id", "imu_link")
 
         self.port = self.get_parameter("port").value
         self.baudrate = int(self.get_parameter("baudrate").value)
         self.timer_period = float(self.get_parameter("timer_period").value)
+        self.imu_frame_id = self.get_parameter("imu_frame_id").value
 
         self.serial_connection = None
 
@@ -64,6 +67,8 @@ class SensorSerialNode(Node):
         self.right_encoder_pub = self.create_publisher(Int64, "/encoder/right", 10)
 
         self.uptime_pub = self.create_publisher(Int64, "/esp32/uptime_ms", 10)
+
+        self.imu_pub = self.create_publisher(Imu, "/imu/data", 10)
 
         self.connect_serial()
 
@@ -178,6 +183,53 @@ class SensorSerialNode(Node):
         msg.data = int(data[key])
         publisher.publish(msg)
 
+    def publish_imu_if_valid(self, data: Dict[str, float]):
+        required_keys = [
+            "MPU_OK",
+            "AX_G",
+            "AY_G",
+            "AZ_G",
+            "GX_DPS",
+            "GY_DPS",
+            "GZ_DPS",
+        ]
+
+        for key in required_keys:
+            if key not in data:
+                return
+
+        if int(data["MPU_OK"]) != 1:
+            return
+
+        g_to_mps2 = 9.80665
+        dps_to_radps = math.pi / 180.0
+
+        msg = Imu()
+        msg.header.stamp = self.get_clock().now().to_msg()
+        msg.header.frame_id = self.imu_frame_id
+
+        # Orientation is not calculated yet.
+        # ROS convention: orientation_covariance[0] = -1 means orientation is unknown.
+        msg.orientation_covariance[0] = -1.0
+
+        msg.linear_acceleration.x = float(data["AX_G"] * g_to_mps2)
+        msg.linear_acceleration.y = float(data["AY_G"] * g_to_mps2)
+        msg.linear_acceleration.z = float(data["AZ_G"] * g_to_mps2)
+
+        msg.angular_velocity.x = float(data["GX_DPS"] * dps_to_radps)
+        msg.angular_velocity.y = float(data["GY_DPS"] * dps_to_radps)
+        msg.angular_velocity.z = float(data["GZ_DPS"] * dps_to_radps)
+
+        msg.angular_velocity_covariance[0] = 0.01
+        msg.angular_velocity_covariance[4] = 0.01
+        msg.angular_velocity_covariance[8] = 0.01
+
+        msg.linear_acceleration_covariance[0] = 0.1
+        msg.linear_acceleration_covariance[4] = 0.1
+        msg.linear_acceleration_covariance[8] = 0.1
+
+        self.imu_pub.publish(msg)
+
     def publish_sensor_data(self, data: Dict[str, float]):
         self.publish_float_if_valid_mm(data, "F_MM", self.front_pub)
         self.publish_float_if_valid_mm(data, "L_MM", self.left_pub)
@@ -191,6 +243,8 @@ class SensorSerialNode(Node):
         self.publish_int_if_valid(data, "ENC_R", self.right_encoder_pub)
 
         self.publish_int_if_valid(data, "UPTIME_MS", self.uptime_pub)
+
+        self.publish_imu_if_valid(data)
 
 
 def main(args=None):

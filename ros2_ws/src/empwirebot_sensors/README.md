@@ -29,6 +29,32 @@ Published Topics:
 /encoder/right
 /esp32/uptime_ms
 /imu/data
+/odom
+
+## Odometry
+
+The node publishes basic encoder odometry to:
+
+```text
+/odom
+
+Current encoder settings:  
+pulses_per_revolution = 20
+wheel_diameter_m = 0.0676
+
+
+The calculated distance per encoder pulse is about:
+0.01062 m
+
+Important current limitation:
+The encoder system currently counts pulses only. It does not yet know wheel direction, so /odom is basic and should be improved later using motor direction or better encoder direction sensing.
+
+Wheel track width is not confirmed yet, so turning odometry is disabled by default.
+
+Later, set: 
+wheel_track_width_m
+
+to enable better turning calculation.
 
 
 ## IMU Data

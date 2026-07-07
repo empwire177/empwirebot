@@ -170,11 +170,15 @@ Current published topics:
 /encoder/right
 /esp32/uptime_ms 
 /imu/data
+/odom
+
 
 
 Planned future improvements:
 - Improve IMU filtering and calibration
-Add /odom
+- Improve encoder odometry accuracy
+- Add wheel direction support
+- Add TF transform support
 Improve serial error handling
 Add launch file
 

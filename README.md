@@ -51,6 +51,9 @@ Main hardware includes:
 - [License](LICENSE)
 - [Serial Protocol](docs/serial_protocol.md)
 - [ROS 2 Sensor Parser Plan](docs/ros2_sensor_parser_plan.md)
+- [Encoder Odometry Plan](docs/encoder_odometry_plan.md)
+
+
 
 ---
 

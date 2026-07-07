@@ -32,9 +32,15 @@ Published Topics:
 
 
 Run Command:
+## Launch Command
+
+```bash
+ros2 launch empwirebot_sensors sensor_serial.launch.py
+
 ros2 run empwirebot_sensors sensor_serial_node
 
 With custom serial port:
+ros2 launch empwirebot_sensors sensor_serial.launch.py port:=/dev/ttyUSB0
 ros2 run empwirebot_sensors sensor_serial_node --ros-args -p port:=/dev/ttyUSB0
 
 
